@@ -7,7 +7,6 @@ setup(
     install_requires=[
         'flask',
         'psycopg2',
-        'psycopg2-binary',
         'python-dotenv'
     ]
 )
