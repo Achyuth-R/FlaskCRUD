@@ -1,9 +1,6 @@
 from flask import request
-from . import get_app
-from . import service
-
-app = get_app()
-
+from app import app
+from app.module import service
 
 @app.get("/")
 def hello():
