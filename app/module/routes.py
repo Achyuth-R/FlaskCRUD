@@ -6,7 +6,7 @@ from app.module import service
 def hello():
     return('hello')
 
-#127.0.0.1:5000/api/records
+#127.0.0.1:8000/api/records
 @app.route('/api/records', methods=['GET','PUT'])
 def handleRecordsFun():
     if(request.method == 'GET'):
@@ -25,7 +25,7 @@ def handleRecordsFun():
                             'Error_Msg':result[1]}),500
         
         
-    elif(request.method == 'POST'):
+    elif(request.method == 'PUT'):
         data = request.get_json()
         id = data["id"]
         name = data["name"]
@@ -37,7 +37,7 @@ def handleRecordsFun():
             return jsonify({'status':'error',
                             'Error_Msg' : resp[1]}),500
 
-#127.0.0.1:5000/api/records/<id>
+#127.0.0.1:8000/api/records/<id>
 @app.route('/api/records/<id>', methods = ["GET","POST","DELETE"])
 def handleIndividualRecordFun(id):
 
