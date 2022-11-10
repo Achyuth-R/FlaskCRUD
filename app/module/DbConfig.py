@@ -1,6 +1,6 @@
 import configparser
 
-def Config(filename='app/database.ini',section='database'):
+def Config(filename='database.ini',section='database'):
     parse = configparser.ConfigParser()
     parse.read(filename)
     db=0
