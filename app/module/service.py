@@ -26,7 +26,6 @@ def retrieve(id):
     try:
         dbObj = TestTable.query.filter_by(id=id).first()
         return [True,dbObj]
-        # return('Record retrieved from database with ID = {} name = {} '.format(dbObj.id, dbObj.name))
     except Exception as e:
         print("Failed to get data.")
         print(e)
@@ -39,7 +38,6 @@ def update(id, name):
         dbObj.id = id
         db.session.commit()
         return [True,dbObj]
-        # return ('Record with ID = {} updated with name = {}'.format(id, name)) 
     except Exception as e:
         print("Failed to update data")
         print(e)
