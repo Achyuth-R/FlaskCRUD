@@ -1,6 +1,6 @@
 import configparser
 
-def Config(filename='database.ini',section='database'):
+def DbConfig(filename='database.ini',section='database'):
     parse = configparser.ConfigParser()
     parse.read(filename)
     db=0
@@ -18,3 +18,14 @@ def Config(filename='database.ini',section='database'):
     else:
         raise Exception('Section {0} not found in the {1} file'.format(section, filename))
     return db
+
+def APIDescConfig(filename='database.ini',section='ApiROOTdesc'):
+    parse = configparser.ConfigParser()
+    parse.read(filename)
+    db=0
+    if parse.has_section(section):
+        param = parse.items(section)
+        desc=param[0][1]
+    else:
+        raise Exception('Section {0} not found in the {1} file'.format(section, filename))
+    return desc
